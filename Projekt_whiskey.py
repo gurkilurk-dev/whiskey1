@@ -1,24 +1,14 @@
-import os
-import csv
+f = open("athletes.csv","r")
+temp = f.readline()
+temp = f.readline()
+print(temp)
+matris=[[],[],[],[],[],[],[],[],[]]
 
-here = os.path.dirname(__file__)
-path = os.path.join(here, "athletes.csv")
+while temp != "":
+    temp=temp.split(",")
+    for i in range(4,len(temp)-1):
+        if temp[i]!="":
+            matris[i-4].append((temp[i],temp[0],temp[1],temp[2],temp[3]))
+    temp = f.readline()
+print(matris[0])
 
-Long_Jump = [ ]
-Triple_Jump = [ ]
-High_Jump = [ ]
-Pole_Vault = [ ]
-Run1 = [ ]
-Run2 = [ ]
-Run4 = [ ]
-Run8 = [ ]
-Run16 = [ ]
-
-first_col = []
-with open(path, newline='', encoding='utf-8') as f:
-    reader = csv.reader(f)
-    # next(reader, None)  # hoppa header om behövs
-    for row in reader:
-        if row:
-            first_col.append(row[4])
-print(first_col)
