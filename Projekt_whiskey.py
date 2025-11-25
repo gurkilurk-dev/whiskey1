@@ -11,4 +11,5 @@ while temp != "":
             matris[i-4].append((temp[i],temp[0],temp[1],temp[2],temp[3]))
     temp = f.readline()
 print(matris[0])
+print ["hej"]
 
